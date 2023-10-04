@@ -51,8 +51,29 @@
         color: #a08131
     }
     .custom-line-height {
-        line-height: 0.9; 
-    } 
+        line-height: 1.1; 
+    }
+        /* 모바일 화면 스타일 */
+        @media (max-width: 767px) {
+            /* 네비게이션 바 스타일 수정 */
+            nav {
+                padding: 15px;
+            }
+
+            /* 다른 스타일 수정 및 레이아웃 조정 */
+            /* 예: section의 너비, 글꼴 크기, 이미지 크기 등을 모바일 화면에 맞게 조정 */
+        }
+
+        /* 노트북 및 데스크톱 화면 스타일 */
+        @media (min-width: 768px) {
+            /* 네비게이션 바 스타일 수정 */
+            nav {
+                padding: 15px 50px;
+            }
+
+            /* 다른 스타일 수정 및 레이아웃 조정 */
+            /* 예: section의 너비, 글꼴 크기, 이미지 크기 등을 조정 */
+        }
     </style>
 </head>
 <body>
