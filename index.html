@@ -24,6 +24,34 @@
         .section {
             display: none; /* 섹션 숨김 */
         }
+        /* 네비게이션 바 스타일 */
+        nav {
+            background-color: #007BFF; /* 배경색 설정 */
+            padding: 15px; /* 위아래 여백 설정 */
+            text-align: center; /* 텍스트 가운데 정렬 */
+        }
+
+        nav ul {
+            list-style: none; /* 목록 기호 제거 */
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline; /* 리스트 항목을 인라인으로 표시 */
+            margin-right: 20px; /* 리스트 항목 사이 여백 설정 */
+        }
+
+        nav ul li a {
+            text-decoration: none; /* 링크 밑줄 제거 */
+            color: #fff; /* 텍스트 색상 설정 */
+            font-weight: bold; /* 글꼴 굵기 설정 */
+            font-size: 16px; /* 글꼴 크기 설정 */
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline; /* 링크에 마우스를 올렸을 때 밑줄 표시 */
+        }
+    </style>
     </style>
 </head>
 <style>
@@ -40,9 +68,9 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#" onclick="showSection('research')">Research</a></li>
-            <li><a href="#" onclick="showSection('papers')">Papers</a></li>
-            <li><a href="#" onclick="showSection('about')">About me</a></li>
+            <li><a href="#" data-section="research">Research</a></li>
+            <li><a href="#" data-section="papers">Papers</a></li>
+            <li><a href="#" data-section="about">About me</a></li>
         </ul>
     </nav>
     <!-- 연구 섹션 -->
@@ -99,18 +127,36 @@
     </div>
     </section>
     <script>
-        // JavaScript 함수를 사용하여 섹션을 열고 닫음
-        function showSection(sectionId) {
-            // 모든 섹션을 숨김
-            var sections = document.getElementsByClassName('section');
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].style.display = 'none';
-            }
-            // 선택한 섹션을 표시
-            var selectedSection = document.getElementById(sectionId);
-            selectedSection.style.display = 'block';
+        // 초기 상태: 모든 섹션 숨김
+        var sections = document.getElementsByClassName('section');
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].style.display = 'none';
+        }
+
+        // 네비게이션 링크 클릭 시 해당 섹션을 표시
+        var navLinks = document.querySelectorAll('nav a[data-section]');
+        for (var i = 0; i < navLinks.length; i++) {
+            navLinks[i].addEventListener('click', function(event) {
+                event.preventDefault();
+                var targetSectionId = this.getAttribute('data-section');
+                var targetSection = document.getElementById(targetSectionId);
+                // 다른 섹션을 숨기고 선택한 섹션을 표시
+                for (var j = 0; j < sections.length; j++) {
+                    sections[j].style.display = 'none';
+                }
+                targetSection.style.display = 'block';
+            });
         }
     </script>
+</body>
+</html>
+위 코드에서는 네비게이션 바의 배경색과 텍스트 스타일을 조정하여 배너 버튼 스타일로 디자인하였습니다. 네비게이션 바의 항목들은 가로로 배치되며 마우스를 올릴 때 밑줄이 표시되도록 설정되었습니다.
+
+
+
+
+
+
 </body>
 </html>
 
