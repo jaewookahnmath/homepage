@@ -7,7 +7,11 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
     <div class="hero bg-dark text-center py-5">
-                    <img src="https://github.com/jaewookahnmath/homepage/assets/146867356/e17054c0-1074-49e7-bc47-f785722ba7d1" alt="이미지" height="100%">        
+    <picture>
+      <source media="(max-width: 799px)" srcset="https://github.com/jaewookahnmath/homepage/assets/146867356/e17054c0-1074-49e7-bc47-f785722ba7d1" />
+      <source media="(min-width: 800px)" srcset="elva-800w.jpg" />
+      <img src="elva-800w.jpg" alt="이미지" />
+    </picture>      
     </div>
     <style>
       *  {
@@ -77,9 +81,6 @@
     </style>
 </head>
 <body>
-    <div class="hero text-center py-5 mt-5">
-        <h3 class="text-gold">Jaewook Ahn</h3>
-    </div>
     <nav>
         <ul>
             <li><a href="#" data-section="research">Research</a></li>
